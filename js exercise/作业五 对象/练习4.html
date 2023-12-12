@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sendNum = Math.floor(Math.random()*11)
+        let flag = true
+        for(let i = 1 ; i<4 ; i++){
+            let inPut = +prompt(`输入你猜想的数字（范围0-10）`)
+            if(inPut>sendNum){
+                alert(`猜大了`)
+            }
+            else if(inPut<sendNum){
+                alert(`猜小了`)
+            }
+            else {
+                alert(`恭喜你，猜对了！`)
+                flag = false
+                break
+            }
+        }
+        if(flag){
+                alert(`猜错次数过多，失败`)
+            }
+    </script>
+</body>
+</html>

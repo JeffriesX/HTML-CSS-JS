@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 事件对象 -->
+    <input type="text">
+    <button>点击</button>
+    <script>
+        const ipt = document.querySelector('input')
+        // 在绑定函数的第一个参数中加入事件对象'e'
+        ipt.addEventListener('keyup',function(e){
+            // 设置事件对象的属性值
+            if(e.key === 'Enter'){
+                console.log('点击了Enter键')
+            }
+        })
+        // 语法： 元素.addEventListener('事件类型',function(事件对象名){})
+        // 一般对事件对象命名为：e、ev、event
+    </script>
+</body>
+</html>

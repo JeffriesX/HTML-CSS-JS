@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 先引用lodash工具库js -->
+        <script src="lodash.js"></script>
+        <script>
+            const obj = {
+                uname: '小明',
+                age: 18,
+                sport:['篮球','足球'],
+                family:{baby: '宝贝'}
+            }
+            // 直接在lodash查找深拷贝方法,按其代码写入即可
+            const o = _.cloneDeep(obj)
+
+            // 打印检验
+            console.log(obj)
+            o.age = 20
+            o.sport[0] = '乒乓球'
+            o.family.baby = '小宝贝'
+            console.log(o)
+        </script>
+    </body>
+    </html>
+</body>
+</html>

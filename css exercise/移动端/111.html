@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .BOX{
+            background-color: bisque;
+            position: relative;
+            width: 100PX;
+            height: 100PX;
+            margin: auto;
+        
+        }
+        .a{
+            width: 40px;
+            height: 2px;
+            background-color: black;
+            top: 0px;
+            position: absolute;
+            
+        }
+        .b{
+            width: 40px;
+            height: 2px;
+            background-color: black;
+            top: 14px;
+            position: absolute;
+        }
+        .c{
+            width: 40px;
+            height: 2px;
+            background-color: black;
+            top: 28px;
+            position: absolute;
+        }
+        .BOX:hover .a{
+            transform: rotateZ(45deg);
+            transform-origin: left bottom;
+            transition: all 0.5s linear;
+        }
+        .BOX:hover .c{
+            transform: rotate(-45deg);
+            transform-origin: left top;
+            transition: all 0.5s linear;
+        }
+        .BOX:hover .b{
+            opacity: 0;
+            transition: all 0.5s linear;
+        }
+        .zz{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left:37.5%;
+
+        }
+        .zz:hover{
+            transform: rotate(360deg);
+            transform-origin: left top;
+            transition: 5s linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="BOX">
+        <div class="a"></div>
+        <div class="b"></div>
+        <div class="c"></div>
+    </div>
+    <div class="zz">
+    </div>
+</body>
+</html>

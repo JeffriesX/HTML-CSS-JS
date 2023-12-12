@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .true{
+            color: rgb(3, 222, 3);
+        }
+        .false{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <span></span>
+    <script>
+        // 元素获取
+        const ipt = document.querySelector('input')
+        const span = document.querySelector('span')
+        // 设置正则表达式
+        const reg = /^[0-9a-bA-B]{6,16}$/
+        // 表单设置失去焦点事件
+        ipt.addEventListener('blur',function(){
+            // 判断输入字符是否符合正则表达式
+            if(reg.test(ipt.value)){
+                // 符合
+                span.innerHTML = '输入正确'
+                span.className = 'true'
+            }
+            // 不符合
+            else{
+                span.innerHTML = '请输入6-16为数字或字母'
+                span.className = 'false'
+            }
+        })
+    </script>
+</body>
+</html>

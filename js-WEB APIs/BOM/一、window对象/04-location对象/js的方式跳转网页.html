@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="http://www.baidu.com">将在5s后跳转到首页</a>
+    </div>
+    
+    <script>
+        const a =document.querySelector('a')
+        let num = 5
+        setInterval(function(){
+            num--
+            a.innerHTML = `将在${num}s后跳转到首页`
+            if(num<=0){
+                location.href = 'http://www.baidu.com'
+            }
+            
+        }, 1000)
+        
+    </script>
+</body>
+</html>

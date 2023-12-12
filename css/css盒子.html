@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 清除浏览器默认样式 -->
+    <link rel="stylesheet" href="./样式清除/reset.css">
+    <STYle>
+
+        /* 盒子模型 P框11-12 */
+        /* 盒子边框  图一青色 */
+        .ABC{
+            width: 300PX;
+            height: 300PX;
+            background-color: aquamarine;
+            border: 10px yellow solid;
+
+        /* 盒子外边距的设置、垂直上方向添加边框：
+                                         因父子元素间垂直方向的外
+                                         边距会发生重叠，在父元素
+                                         上添加上边原便可解决这个
+                                         问题 
+                                         图一棕色 */
+        }
+        .abc{
+            width: 100px ;
+            height: 100px;
+            background-color: brown;
+            margin: 100px 50px auto 100px;
+            border-top: 1px solid ;
+          
+
+        }
+
+        /* 盒子 子元素外边距设置其位置 图一蓝色 */
+        .def{
+            height: 20px;
+            margin:40px auto auto 40px ;
+            background-color: blue;
+            width: 32px;
+            
+
+        }
+        /* P框11盒子外边距的折叠 
+                    兄弟元素之间的外边距折叠：
+                          垂直方向取较大值
+                    父子元素之间：
+                          父元素随子元素外边距而改变
+                     
+                          */
+        .aaa{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 50px;
+        }
+        .bbb{
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            margin-top: -40px;
+        
+        /* 行内元素的盒模型
+                    行内元素设置不了width、heigh
+                    设置border、padding、margin不会影响布局，
+                    且对垂直放像的设置无效，对水平方向的设置有效*/
+        }
+        .qqq{
+            background-color: yellow;
+            font-size: 0.5em;
+        }
+        .zzz{
+            width: 50px;
+            height: 50px;
+            background-color: #bfa;
+        }
+
+        /* 设置元素类型display、元素的显示与否visibility
+                    以a（行内元素）元素为例，
+                    display用来设置元素显示类型
+                          可选值：
+                              inline：将元素设置为行内元素
+                              block：将元素设置为块元素
+                              inline-block:设置为行内块
+                              none:元素在页面中不显示
+                              table:将原元素设置为表格
+                    visiblity：设置元素显示状态
+                          可选值：
+                              visible 默认状态，现实中在页面中
+                              hidden  元素在页面中不显示，但位置依然占据 
+                     */
+        a{
+            display: block;
+            visibility: visible;
+            background-color: orange;
+            width: 70px;
+            height: 70px;
+        }
+
+    </STYle>
+    
+</head>
+<body>
+    <div class="ABC">
+        <div class="abc">
+            <p class="def">图一
+            </p>
+
+        </div>
+    </div>
+    <div class="aaa"></div>
+    <div class="bbb"></div>
+    <span class="qqq">
+        123123
+    </span>
+    <a href="www">超链接</a>
+    <a href="www">超链接</a>
+    <div class="zzz">
+
+    </div>
+    <!-- 浏览器会自带有一些默认样式，如列表前面会有一定的外边距
+         可利用选择器选择要清除样式的标签，设置要清除样式的值为
+         0即可，由于标签种类繁多，我们可用link标签引入一个外部
+         文件直接全部清除 如：<link rel="stylesheet" href="./样式清除/reset.css">-->
+    <ul>
+        <li>清除</li>
+        <li>默认</li>
+        <li>样式</li>
+        <li>举例</li>
+    </ul>
+</body>
+</html>

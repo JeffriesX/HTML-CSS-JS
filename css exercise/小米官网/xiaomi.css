@@ -1,0 +1,593 @@
+/* 顶部导航栏 */
+.top-bar{
+    background-color: #333;
+    color: #b0b0b0;
+    height: 40px;
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,
+    Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    
+    
+}
+.BOX{
+    width: 1226px;
+    margin: 0 auto;
+    line-height: 40px;
+    font-size: 12px;
+    position: relative;
+    
+}
+.box1{
+    float: left; 
+}
+.box2{
+    float: right; 
+    padding: 0 25px;
+}
+.box3{
+    float: right ;
+    background-color: #424242;
+    
+}
+.BOX a{
+    text-decoration: none;
+    color: #b0b0b0;
+}
+
+.b1 li{
+    float: left;
+} 
+ .b3 li,
+ .b3 i{
+    float: left;
+    margin-left: 3px;
+} 
+.b3 i{
+    padding-left: 21px;
+    color: #ff7300;
+    font-size: 20px;
+}
+.BOX li:hover a{
+    color: white;
+}
+
+.b2 li{
+    float: right;
+}
+
+.b1 li:nth-child(even){
+    height: 12px;
+    width: 1px;
+    background-color: #424242;
+    margin: 14px 7.8px;
+}
+.b2 li:nth-child(even){
+    height: 12px;
+    width: 1px;
+    background-color: #424242;
+    margin: 14px 8px;
+}
+.b3{
+    width: 120px;
+    height: 40px;
+    display: block;
+}
+.erweima{
+    width: 128px;
+    height: 0px;
+    overflow: hidden;
+    background-color: white;
+    position: absolute;
+    z-index: 30;
+    left: 604px;
+    box-shadow: 0 3px 10px rgba(137, 137, 137, 0.5);
+    transition: height .5s;
+
+}
+.erweima img{
+    width: 94px;
+    margin: 17px;
+}
+.erweima p{
+    margin-top: -35px;
+    text-align: center;
+    font-size: 14px;
+    color: #333333;
+}
+.sanjiao{
+    width: 0px;
+    height: 0px;
+    z-index: 90;
+    border: 10px solid red;
+    border-color: transparent transparent white transparent;
+    position: absolute;
+    top: 21px;
+    left: 656px;
+    display: none;
+}
+.ewm:hover .sanjiao{
+    display: block;
+}
+.ewm:hover .erweima{
+    height: 142px;
+}
+
+
+/* 搜索栏一行导航栏 */
+.sec-bar{
+    height: 100px;
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,
+    Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    
+}
+.BOX2{
+    /* background-color: #f0ebeb; */
+    width: 1226px;
+    height: 100px;
+    margin: 0 auto;
+}
+.BOX2 a{
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+    padding: 0 10px;
+}
+.two-box1 a{
+    padding-left: 0;
+}
+.two-box1 .two-logo{
+    width: 56px;
+    
+}
+/* .two-box2 .two-2b2 li{
+    float: left;
+} */
+.two-box1{
+    float: left;
+    height: 100px;
+    padding-top: 25PX;
+    
+}
+.two-box2{
+    float: left;
+    height: 100px;
+    width: 650px;
+    margin-left: 172px;
+    
+}
+.two-box3{
+    float: right;
+    height: 50px;
+    width: 296px;
+    background-color: red;
+    margin-top: 25px;
+    float: right;
+}
+.two-box3 i{
+    font-size: 20px;
+    font-weight: 900;
+    color: #333333;
+}
+.two-box2 .two-b2 li{
+    float: left;
+}
+.two-box2{
+    line-height: 100px;
+}
+.two-b2 a:hover{
+    color: #ff7300;
+}
+/* 设置搜索框样式 */
+.two-b3{
+    border: none;
+    padding: 0 10px;
+    height: 50px;
+    width: 244px;
+    font: 14px 'Microsoft Yahei',sans-serif;
+    border: 1px solid #c5c3c3;
+    background-color: white;
+    float: left;
+    outline: none;
+    box-sizing: border-box;
+}
+.two-b4{
+    height: 50px;
+    width: 52px;
+    border: 1px solid #c5c3c3;
+    background-color: white; 
+    float: left;
+    padding: 0;
+    border-left: none;
+}
+.two-box3:hover .two-b3,
+.two-box3:hover .two-b4{
+    border-color: #ff7600;
+}
+.two-b4:hover{
+    background-color: #ff7300;
+}
+.two-b4:hover i{
+    color: white;
+}
+.two-b3:active{
+    border-color: #ff7300;
+}
+
+
+/* 中部内容区 */
+
+.BOX3{
+    width: 1226PX;
+    height: 460PX;
+    margin: 0 auto;
+    background-color: #e0e0e0;
+    position: relative;
+    
+}
+
+.three-box1{
+    height: 420px;
+    width: 234px;
+    background-color: rgba(105,101,101,.6);
+    padding: 20px 0;
+    float: left;
+    position: absolute;
+
+}
+.three-box2{
+    width: 992px;
+    height: 460px;
+    background-color: #b0b0b0;
+    position: absolute;
+    left: 234px;
+    background-image: url("./图片/p1.webp");
+    background-size:1200px ;
+    background-position: -200px;
+}
+.three-box1 a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+.three-box1 li{
+    height: 42px;
+    width: 204px;
+    padding-left: 30px;
+    line-height: 42px;
+}
+.three-box1 li::before{
+    content: "\e60c";
+    font-family: "iconfont";
+    color: rgba(255, 254, 254, 0.8);
+    font-size: 23px;
+    position: absolute;
+    left: 190px;
+}
+.three-box1 li:hover{
+    background-color: #ff7300;
+}
+/* 右拉框部分 */
+.youlakuang{
+    position: absolute;
+    background-color: #fbfbfa;
+    width: 400px;
+    height: 460px;
+    z-index: 60;
+    left: 234px;
+    top: 0px;
+    box-shadow: 4px 4px 15px rgba(204, 202, 202, 0.8);
+    display: none;
+}
+.ylk:hover .youlakuang{
+    display: block;
+}
+.youlakuang p{
+    color: #ff7600;
+    font: 50px '幼圆';
+    white-space: pre;
+}
+
+.three-box2 .jiantouA::before{
+    content: '\e67f';
+    font-family: 'iconfont';
+    font-size: 45px;
+    z-index: 20;
+    color: rgba(214, 211, 211, 0.6);
+    position: relative;
+    left: -3px;
+}
+.three-box2 .jiantouB::before{
+    content: '\e680';
+    font-family: 'iconfont';
+    font-size: 45px;
+    z-index: 20;
+    color: rgba(214, 211, 211, 0.6);
+}
+.three-box2 .jiantouA{
+    display: block;
+    width: 41px;
+    height: 45px;
+    padding: 12px 0;
+    position: absolute;
+    top: 195.5px;
+    overflow: hidden;
+}
+.three-box2 .jiantouB{
+    display: block;
+    width: 41px;
+    height: 57px;
+    padding-top: 12px;
+    position: absolute;
+    top: 195.5px;
+    left: 951px;
+    overflow: hidden;
+}
+
+/* 中部内容区 隐藏部分 左侧箭头 */
+.jiantoua{
+    width: 41px;
+    height: 45px;
+    background-color: rgba(18, 18, 19, 0.5);
+    padding: 12px 0;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    display: none;
+    border-radius: 0 3px 3px 0;
+}
+.three-box2 .jiantoua::before{
+    content: '\e67f';
+    font-family: 'iconfont';
+    font-size: 45px;
+    z-index: 20;
+    color: white;
+    position: relative;
+    left: -3px;
+}
+.jiantouA:hover .jiantoua{
+    display: block;
+}
+
+/* 中部内容区 隐藏部分 右侧侧箭头 */
+.jiantoub{
+    width: 41px;
+    height: 45px;
+    background-color: rgba(18, 18, 19, 0.5);
+    padding: 12px 0;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    display: none;
+    border-radius: 3px 0 0 3px;
+}
+.three-box2 .jiantoub::before{
+    content: '\e680';
+    font-family: 'iconfont';
+    font-size: 45px;
+    z-index: 20;
+    color: white;
+    position: relative;
+}
+.jiantouB:hover .jiantoub{
+    display: block;
+}
+/* 圆点部分 */
+.three-b2 li{
+    display: block;
+    width: 6.5px;
+    height: 6.5px;
+    background-color: rgba(62, 61, 61, 0.5);
+    z-index: 50;
+    float: left;
+    border-radius: 50%;
+    border: 1.5px solid rgba(135, 135, 135, 0.5);
+    background-clip: padding-box;
+    margin: 0 4px;
+}
+.three-b2 li:hover{
+    background-color: rgba(251, 250, 250, 0.7);
+    width: 6.5;
+    height: 6.5;
+}
+.three-b2 li:active{
+    background-color: rgba(251, 250, 250, 0.7);
+    width: 6.5;
+    height: 6.5;
+}
+.three-b2{
+    width: 93PX;
+    height: 10PX;
+    padding-left: 7px;
+    position: absolute;
+    top: 430px;
+    left: 870px;
+}
+
+
+/* 网页第三行部分内容 */
+.four-bar{
+    overflow: hidden;
+    position: relative;
+    top: 0PX;
+    
+}
+.BOX4{
+    margin: 0 auto;
+    width: 1226px;
+    height: 205px;
+    position: relative;
+}
+.four-box1{
+    width: 230px;
+    height: 164px;
+    padding: 2px;
+    background-color: #5f5750;
+    position: absolute;
+    margin-top: 14px;
+}
+.four-box2{
+    width: 992px;
+    height: 170px;
+    
+    position: absolute;
+    left: 234px;
+    margin-top: 14px;
+    
+}
+/* 调整box1中6个内容和直线 */
+a.four-b1{
+    display: block;
+    width: 70px;
+    height: 82px;
+    z-index: 30;
+    float: left;
+    padding: 0 3px;
+}
+.zhixiana{
+    background-color: #665e57;
+    width: 1px;
+    height: 70px;
+    float: left;
+    margin-top: 5px;
+}
+a.four-b2{
+    display: block;
+    width: 70px;
+    height: 82px;
+    z-index: 30;
+    float: left;
+    padding: 0 3px;
+}
+.zhixianb{
+    background-color: #665e57;
+    width: 1px;
+    height: 70px;
+    float: left;
+    margin-top: 5px;
+}
+a.four-b3{
+    display: block;
+    width: 70px;
+    height: 82px;
+    z-index: 30;
+    float: left;
+    padding: 0 3px;
+}
+.zhixianc{
+    background-color: #665e57;
+    width: 64px;
+    height: 1px;
+    float: left;
+    margin-left: 5px;
+}
+.zhixiand{
+    background-color: #665e57;
+    width: 64px;
+    height: 1px;
+    float: left;
+    margin-left: 14px;
+}
+.zhixiane{
+    background-color: #665e57;
+    width: 64px;
+    height: 1px;
+    float: left;
+    margin-left: 13px;
+}
+a.four-b4{
+    display: block;
+    width: 70px;
+    height: 82px;
+    z-index: 30;
+    float: left;
+    padding: 0 3px;
+}
+.zhixianf{
+    background-color: #665e57;
+    width: 1px;
+    height: 70px;
+    float: left;
+    margin-top: 5px;
+}
+a.four-b5{
+    display: block;
+    width: 70px;
+    height: 82px;
+    z-index: 30;
+    float: left;
+    padding: 0 3px;
+}
+.zhixiang{
+    background-color: #665e57;
+    width: 1px;
+    height: 70px;
+    float: left;
+    margin-top: 5px;
+}
+a.four-b6{
+    display: block;
+    width: 70px;
+    height: 82px;
+    z-index: 30;
+    float: left;
+    padding: 0 3px;
+}
+/*  */
+.four-box1 img{
+    width: 24px;
+    height: 24px;
+    margin: 10px 22px 0 24px;
+}
+.ltu1{
+    font-size: 12px;
+    color: rgba(255, 251, 251, 0.7);
+    margin: 10px 5px 0 11px;
+}
+.four-box1 a{
+    text-decoration: none;
+}
+.four-box1 a:hover .ltu1{
+    color: white;
+    
+}
+.four-box2 a{
+    display: block;
+    width: 316px;
+    height: 170px;
+    background-color: #ff7300;
+    float: left;
+}
+.four-box2 a:hover{
+    box-shadow: 0px 7px 14px rgba(169, 169, 169, 0.6);
+    transition: 0.4s;
+}
+.four-box2 .p1a{
+    margin-left: 14px;
+    background-image: url('./图片/bp1.webp');
+    background-size: cover;
+}
+.four-box2 .p2a{
+    margin-left: 14px;
+    background-image: url('./图片/bp2.webp');
+    background-size: cover;
+}
+.four-box2 .p3a{
+    float: right;
+    background-image: url('./图片/bp3.webp');
+    background-size: cover;
+}
+
+/* last-bar内容 */
+.last-bar{
+    height: 500px;
+    background-color: #f5f5f5;
+    position: relative;
+    padding-top: 14px;
+}
+.last-tu{
+    background-color: #ff7300;
+    width: 1226px;
+    height: 120px;
+    margin: 0 auto;
+    background-image: url("图片/bbp1.webp");
+    background-size: cover;
+}

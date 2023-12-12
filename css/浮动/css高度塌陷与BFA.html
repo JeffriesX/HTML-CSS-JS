@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高度塌陷与BFA</title>
+    <style>
+        /* 为父元素设置BFC，即常用的overflow
+        使其可以被设置浮动后的子元素撑开 */
+        .A{
+            border: 5PX solid RED;
+            overflow: hidden;
+        }
+        .a{
+            background-color: aquamarine;
+            width: 100px;
+            height: 100px;
+            float: left;
+
+        }
+        .b{
+            background-color: yellow;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="A">
+        <div class="a"></div>
+        <div class="b"></div>
+    </div>
+    
+</body>
+</html>

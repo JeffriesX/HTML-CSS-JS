@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./样式清除/reset.css">
+    <style>
+        ul{
+            background-color: rgb(242, 242, 242);
+            width: 900px;
+            height: 900px;
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-around,flex-start;
+            align-content: flex-start;
+            flex-flow: ROW wrap;
+            position: relative;
+            
+        }
+        img{
+            width: 252.8px;
+            display: block;
+        }
+        ul .td{
+            color: rgb(2, 2, 2);
+            font-size: 16px;
+            text-align: center;
+            margin: 10px;
+        }
+        /* ul .bd{
+    
+            
+        } */
+        li{
+            width: 252.8PX;
+            height: 220PX;
+            background-color: rgb(154, 187, 254);
+            display: flex;
+            flex-flow: column wrap;
+            border-radius: 20px;
+            margin: 20px;
+            
+            
+        }
+        li:hover{
+            position: relative;
+            transform: translateY(-10px);
+            box-shadow: 5px 5px 5px rgb(131, 130, 130);
+            transition: .3s;
+        }
+        span{
+            display: block;
+            width: 230px;
+            text-align: center;
+            margin: 5px auto;
+            font-size: 13px;
+            color: rgb(59, 59, 59);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <!-- <li>
+            <div class="td">
+                此处为总标题
+            </div>
+            <div class="bd">
+                <img src="./图/bp1.webp" alt="">
+                <span>此处为标题</span>
+            </div>
+        </li>  -->
+        <script>
+            let data = [
+                {td : '天天开心', img : "./图/bp1.webp" ,bd : '一起走向一个更加美好的世界，努力再努力'},
+                {td : '发财发财', img : "./图/bp2.webp" ,bd : '一起走向一个更加美好的世界，努力再努力'},
+                {td : '喜从天降', img : "./图/bp3.webp" ,bd : '一起走向一个更加美好的世界，努力再努力'},
+                {td : '身体健康', img : "./图/bp1.webp" ,bd : '一起走向一个更加美好的世界，努力再努力'}
+            ]
+            for(let i =0; i<data.length ; i++){
+                document.write(`
+                <li>
+                    <div class="td">
+                        ${data[i].td}
+                    </div>
+                    <div class="bd">
+                        <img src=${data[i].img} alt="">
+                        <span>${data[i].bd}</span>
+                    </div>
+                </li> 
+                `)}
+        </script>
+    </ul>
+</body>
+
+</html>

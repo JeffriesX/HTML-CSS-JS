@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ..............................................
+        /* // .sort()默认升序排列
+        
+        let arr = [3,2,6,4,5]
+        arr.sort()
+        console.log(arr); */
+         
+        // ..............................................
+        /* // 函数升序排列
+        // 上面的升序排列也相当于这个，sort()括号内不写
+        // 默认为此
+        
+        let arr = [3,2,6,4,5]
+        arr.sort(function(a,b){
+            return a-b
+        })
+        console.log(arr);  */
+
+        // ..............................................
+        /* // 函数降序排列
+        // 降序必须使用函数 function（）{}
+
+        let arr = [3,2,6,4,5]
+        arr.sort(function(a,b){
+            return b-a 
+        })
+        console.log(arr);  */
+
+    </script>
+    
+</body>
+</html>

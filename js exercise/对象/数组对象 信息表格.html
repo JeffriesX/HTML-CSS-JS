@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        border-collapse: collapse;
+    }
+    tr,td{
+        border: 1px solid;
+        width: 70px;
+        height: 25px;
+    }
+    tr:nth-child(1){
+        background-color: antiquewhite;
+        font-weight: 600;
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+        </tr>
+
+        <script>
+            let arr =[{num: '1',uname:'小明',age: '18',gender: '男'},
+                      {num: '2',uname:'小红',age: '18',gender: '女'}
+                    ]
+            for(i=0;i<arr.length;i++){
+                document.write(`
+                <tr>
+                    <td>${i+1}</td>
+                    <td>${arr[i].uname}</td>
+                    <td>${arr[i].age}</td>
+                    <td>${arr[i].gender}</td>
+                </tr>`)
+            }
+            
+            
+                /* arr.push(`{num: ${j+1},uname:${arr[j].uname},age: ${arr[j]},gender: '男'}`) */
+            
+        </script>
+        
+    </table>
+
+        
+        
+    
+</body>
+
+</html>

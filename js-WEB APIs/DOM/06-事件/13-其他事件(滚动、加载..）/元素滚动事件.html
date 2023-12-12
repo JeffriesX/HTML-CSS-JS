@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 3000px;
+            padding-top: 200px;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #e63030;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    </div>
+    <script>
+        const div = document.querySelector('div')
+        // 为div(元素)设置滚动事件
+        /* div.addEventListener('scroll',function(){
+            console.log(div.scrollTop) */
+
+        // 为页面(window)设置滚动事件
+        window.addEventListener('scroll',function(){
+            // 用到document.documentElement
+            // 可获得不带单位的数字型数据 （读写型）
+            const n = document.documentElement.scrollTop
+            // 设置条件,滚动到某位置时触发事件
+            if(n >= 200){
+                div.style.display = 'block'
+            }
+        })
+    </script>
+</body>
+</html>

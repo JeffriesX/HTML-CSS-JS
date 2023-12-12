@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .BOX{
+            width: 400px;
+            height: 80px;
+            background-color: yellow;
+            margin: 0 auto;
+        }
+        .topBar{
+            width: 400px;
+            height: 55px;
+            background-color: red;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+        }
+        .topBar div{
+            width: 80px;
+            height: 50px;
+            background-color: white;
+            border: 1px solid;
+        }
+        .btn{
+            width: 100%;
+            height: 20px;
+            background-color: blue;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+        .move{
+            width: 60px;
+            height: 3px;
+            background-color: red;
+            position: relative;
+            left: 20px;
+            transition: all .3s;
+        }
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="BOX">
+        <div class="topBar">
+            <div class="li active">1</div>
+            <div class="li">2</div>
+            <div class="li">3</div>
+            <div class="li">4</div>
+        </div>
+        <div class="btn">
+            <div class="move"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <script>
+        const lis = document.querySelectorAll('.li')
+        const move =document.querySelector('.move')
+            for(let i = 0 ; i<=3 ; i++){
+                lis[i].addEventListener('click',function(){
+                    document.querySelector('.active').classList.remove('active')
+                    this.classList.toggle('active')
+                    // console.log(lis[i].offsetLeft);
+                    move.style.left = `${lis[i].offsetLeft+10}px`
+                })
+            }
+    </script>
+</body>
+</html>

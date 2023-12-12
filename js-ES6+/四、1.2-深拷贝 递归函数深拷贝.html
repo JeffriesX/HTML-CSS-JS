@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const obj = {
+                uname: '小明',
+                age: 18,
+                sport:['篮球','足球'],
+                family:{baby: '宝贝'}
+            }
+            // 直接对新对象赋值 const o = obj，若改变新对象中的值，原对象中也会随之改变,因为这种方法拷贝的是栈里的地址  
+            // ⭐1.浅拷贝
+            // 注意，浅拷贝只能拷贝简单对象，多维对象无法拷贝到
+            // 方法1 {...obj}
+            const o = {...obj}
+            console.log(o)
+            // 方法2 Object.assign(拷贝到的对象,被拷贝对象)
+            const o2 = {}
+            Object.assign(o2,obj)
+            console.log(o2)
+            console.log('-------------------------------------分割线---------------------------------------------')
+
+            // ⭐2.深拷贝
+            // 方法1 通过递归实现拷贝
+            function fn(newObj,oldObj){
+                // 遍历旧对象  k得到属性名  [k]得到属性值
+                for(let k in oldObj){
+                    // 检测旧对象是否为复杂数据类型，其中是否含数组
+                    // 处理数组  用if检测，若遍历到某个属性时检测到有数组，执行if中代码
+                    if(oldObj[k] instanceof Array){
+                        // 设置新的空数组,一边接受老数组的值
+                        newObj[k] = []
+                        // 此时重新调用外层函数,重新执行整个函数,这时候传入函数的参数oldObj[k]是代表数组的元素,
+                        // 所以重新执行函数的过程中if中的判断条件就不再满足,直接执行else中代码,对数组的元素赋值
+                        fn(newObj[k],oldObj[k])
+                    }
+                    // 处理对象 与处理数组方法基本一致
+                    else if(oldObj[k] instanceof Object){
+                        newObj[k] = {}
+                        fn(newObj[k],oldObj[k])
+                    }
+                    // 未检测到有复杂数据类型的对象,else执行直接赋值 
+                    else{
+                        // 让新对象属性值=老对象的属性值
+                        newObj[k] = oldObj[k]
+                    }
+
+                }
+            }
+            fn(o, obj)  // 函数传参
+            console.log(obj)
+            o.age = 20
+            o.sport[0] = '乒乓球'
+            o.family.baby = '小宝贝'
+            console.log(o)
+        </script>
+    </body>
+    </html>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单布局</title>
+    <style>
+        /*设置网页标头*/
+        .one{
+            background-color: aquamarine;
+            width: 1000px;
+            height: 150px;
+            margin: 0px auto;
+        }
+        /*设置网页内容区域*/
+        .T{
+            background-color: bisque;
+            width: 1000px;
+            height: 600px;
+            margin: 10px auto;
+        }
+        /*设置网页底部*/
+        .two{
+            background-color: rgb(242, 191, 220);
+            width: 1000px;
+            height: 150px;
+            margin: 0px auto;
+        }
+        /*在内容区中设置分区，用到了元素的浮动*/
+        nav{
+            background-color: aqua;
+            width: 195px;
+            height: 600px;
+            float: left;
+            
+        }
+        article{
+            background-color: blueviolet;
+            width: 590px;
+            height: 600px;
+            float: left;
+            margin: 0 10px;
+        }
+        aside{
+            background-color: yellow;
+            width: 195px;
+            height: 600px;
+            float: left;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <div class="T">
+        <nav></nav>
+        <article></article>
+        <aside></aside>
+    </div>
+    <div class="two"></div>
+    
+</body>
+</html>

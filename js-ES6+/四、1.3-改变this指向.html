@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            uanme: '小明'
+        }
+        // ⭐1.call()方法
+        // 会调用函数，相当于fn()直接调用了函数，只不过还会改变了this指向
+        // 语法： fn.call(obj,1,2)
+        function fn(x,y){
+            // 此时若是正常调用函数，该this指向的是window
+            console.log(this)  // obj
+            console.log(x+y)   // 3
+        }
+        // 通过call()方法后，this指向obj
+        // 括号内第一位置是this指向的对象，后几位都是函数的形参
+        fn.call(obj,1,2)
+
+        console.log('--------------------------------分隔线----------------------------------')
+
+        // ⭐1.apply()方法
+        // 会调用函数
+        // 语法： fn.apply(obj,[1,2])
+        function fn(x,y){
+            console.log(this)  // obj
+            console.applylog(x+y)   // 3
+        }
+        fn.apply(obj,[1,2])
+        // 常用于数组求最大最小值
+        // this不需要指向时可以用填null
+        console.log(Math.max.apply(null,[1,2,3])) // 3
+
+        console.log('--------------------------------分隔线----------------------------------')
+
+        // ⭐⭐1.bind()方法
+        // 不会调用函数，返回的是一个新函数，该新函数为拷贝的原函数，只是该新函数的this指向变了
+        // 语法： fn.bind(obj,1,2)
+        function fn(x,y){
+            console.log(x+y)   // 直接使用fn.bind()不会调用函数，故该打印不会显示
+        }
+        const fun = fn.bind(obj,1,2)
+        fun()
+    </script>
+</body>
+</html>

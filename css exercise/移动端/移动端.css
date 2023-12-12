@@ -1,0 +1,41 @@
+html {
+  font-size: 5.33333333vw;
+}
+.w,
+.top-bar,
+.picture,
+.picture a {
+  width: 22.75rem;
+}
+.top-bar {
+  display: flex;
+  height: 6.5rem;
+  font-size: 2.5rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding-top: 0.25rem;
+  align-items: center;
+}
+.top-bar i {
+  color: #999;
+  font-size: 1.75rem;
+}
+.top-bar a {
+  text-decoration: none;
+}
+.picture {
+  display: flex;
+  height: 15rem;
+  background-color: #f0f0f0;
+  margin: 0 auto;
+  border-radius: 0.75rem;
+}
+.picture img {
+  width: 90%;
+}
+.picture a {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}

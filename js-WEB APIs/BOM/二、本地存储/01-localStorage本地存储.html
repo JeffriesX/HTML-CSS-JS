@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 本地存储localStorage
+
+
+        // 1.存储数据setItem
+        // 语法：
+        // localStorage.setItem('键','值')
+        // localStorage.setItem(key,value)
+        // 其属性值采用键值对的形式
+        localStorage.setItem('uname','董')
+
+        // 2.获取数据getItem
+        // 语法：
+        // localStorage.getItem(key)
+        console.log(localStorage.getItem('uname'))
+
+        // 3.移除数据
+        // 语法：
+        // localStorage.removeItem(key)
+        localStorage.removeItem('uname')
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 正则表达式 -->
+
+    <script>
+    // 1-语法
+        /* 
+        ①定义规则
+          ⭐const 变量名 = /规则表达式/
+        ①（1）判断符合而规则的字符串 test()方法
+          ⭐log(regObj.test(被检测字符串))
+          输出结果是一个布尔值true/false 
+         （2）了解.检测符合规则的字符串 exec()方法
+          console.log(regObj.exec(被检测字符))
+          打印结果返回的是一个数组，没有符合的返回null
+        */
+    // 举例
+       const str = '我在学前端，哈哈'  
+       const reg = /前端/   // 定义规则
+       console.log(reg.test(str))  // true
+       console.log(reg.test('这是前端'))  // true
+       console.log(reg.exec(str))  // ['前端', index: 3, input: '我在学前端', groups: undefined]
+
+       console.log('-------------------------以上完结-----------------------------')
+
+    // 2-元字符
+        // 2.1 边界符
+            //  ^ 以谁开始匹配
+            //  $ 以谁结束匹配
+            // 如
+            console.log(/^哈哈/.test('哈哈哈')) // true
+            console.log(/^哈哈$/.test('哈哈哈')) // false 这个必须完全匹配规则的内容才为false，是精确匹配
+        
+        // 2.2 量词
+            // 表示某模式重复的次数  
+              /* 
+                * 重复0次或更多次
+                + 重复一次或更多次  
+                ? 重复0-1次  
+                {n} 重复n次  
+                {n,} 重复n到更多次  
+                {n,m} 重复n-m次 (逗号两侧不能有空格)
+              */
+              // 例
+              console.log(/^哈哈*$/.test('哈哈哈哈哈哈')) // true
+              console.log(/^你好*$/.test('你好好好'))   // true
+              console.log(/^你好{3}$/.test('你好好好')) // true
+              console.log(/^你好{3}$/.test('你好好好好')) // false 以'好'结尾，且只能重复这个结尾3次
+
+        // 2.3 字符类
+            // （1）[]匹配字符集合
+            /* 
+              [abc] 匹配到 abc 中任意一个字母就为true
+              [a-z] 匹配到 a-z 中任意一个字母就为true
+              [0-9] 匹配到 0-9 中任意一个字母就为true
+              [a-zA-Z0-9] 匹配到 a-zA-Z0-9 中任意一个字母就为true
+              [^abc] 表示取反 匹配到不含 abc 字母的字符串都为true
+              . 只要没有换行符，所有字符都匹配
+
+            */
+            // 例 
+            console.log(/[abc]/.test('body')) // true 只要被检测字符串中有一个字母匹配，都为true
+            console.log(/[abc]/.test('baby')) // true
+            console.log(/[abc]/.test('d')) // false
+
+            // 例 QQ号
+            console.log(/^[1-9][0-9]{4,}$/.test('10000')) // true 以1-9开头，以0-9结尾，且0-9可重复>=4次
+            console.log(/^[1-9][0-9]{4,}$/.test('100000')) // true
+
+        console.log('-------------------------以上完结-----------------------------')
+
+    </script>
+</body>
+</html>

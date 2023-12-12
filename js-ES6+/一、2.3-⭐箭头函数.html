@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text">
+    </form>
+    <!-- 箭头函数 -->
+    <script>
+        // 主要用于匿名函数表达式，使代码简洁
+        // 传统写法
+        const fn0 = function () {
+            console.log(123)
+        }
+        fn0()   // 123
+
+        // 1.箭头函数语法
+        // (1)基本语法............................................................................
+        const fn1 = () => {
+            console.log(123)
+        }
+        fn1()  // 123
+
+        // (2)传参................................................................................
+        // 可以与传统函数一样传递实参，而且，当只有一个实参时，小括号可以省略
+        const fn2 = x => {
+            console.log(x)
+        }
+        fn2(4)  // 4
+
+        // (3)只有一行代码时可省略大括号...........................................................
+        const fn3 = x => console.log(x) 
+        fn3(5)
+
+        // (4)可省略return 返回值写在'+'后面.......................................................
+        const fn4 = (x,y) => x+y
+        console.log(fn4(6,7))  // 13
+
+        // (5)可直接返回一个对象...................................................................
+        const fn5 = (uname) => ({uname : uname})
+        console.log(fn5('小明'))  // {uname: '小明'}
+
+            // 举例...............................................................................
+            const form = document.querySelector('form')
+                // 传统
+                form.addEventListener('click', function(e){
+                    e.prentDefault
+                })
+                // 箭头函数
+                form.addEventListener('click', e => e.prentDefault)
+
+
+    </script>
+</body>
+
+</html>

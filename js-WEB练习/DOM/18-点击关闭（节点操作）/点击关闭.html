@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            border: 1px solid;
+            display: flex;
+            justify-content: flex-end;
+            margin: 100px auto;
+        }
+        button{
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+     <!-- 鼠标点击事件 -->
+     <div>
+        <button>x</button>
+    </div>
+     <div>
+        <button>x</button>
+    </div>
+     <div>
+        <button>x</button>
+    </div>
+    <!-- 点击❌关闭多个对话框 -->
+    <script>
+        // 获取所有的x按键
+        const btns = document.querySelectorAll('button')
+        // 遍历btns数组,点击谁关闭谁的父级元素
+        for(let i = 0 ; i <btns.length ; i++){
+            btns[i].addEventListener('click',function(){
+                this.parentNode.style.display = 'none'
+            })
+        }
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东滚动图片</title>
+    <link rel="stylesheet" href="../css/样式清除/reset.css">
+    <style>
+        .box1{
+            width: 1500PX;
+            height: 1200px;
+            margin: 100px auto;
+            position: relative;
+            
+        }
+        .a{
+            width: 1500px;
+            display: block;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+        }
+        .b{
+            width: 1500px;
+            display: block;
+            margin-left: auto;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            
+        }
+        .c{
+            width: 1500px;
+            display: block;
+            margin-left: auto;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            
+        }
+        .d{
+            width: 1500px;
+            display: block;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            
+        }
+        .A a{
+            background-color: rgba(87, 85, 85, 0.5);
+            width: 30PX;
+            height: 30PX;  
+            float: left;
+            margin-left:20px ; 
+            border-radius: 50%;
+            /* 以下两个属性用来设置初始圆点的外边框，使其既可以占据一定的空间
+            又可以不显示 transprance为透明的意思 */
+            border: 10px solid transparent;
+            /* 将背景颜色设置到内容区 */
+            background-clip: content-box;
+           
+        }
+        .A a:hover,
+        .A a.active{
+            background-color: aliceblue;
+            border: 10px solid rgba(0, 0, 0, 0.2);
+            
+        }
+        .A{
+            position: absolute;
+            top: 1100px;
+            left: 50px; 
+            z-index: 999;
+        }
+
+        .c{
+            z-index: 2;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <a href="http://www.baidu.com"><img class="a" src="./图片、文档/001.webp" alt="1"></a>
+        <a href="http://www.baidu.com"><img class="b" src="./图片、文档/002.jpg" alt="1"></a>
+        <a href="http://www.baidu.com"><img class="c" src="./图片、文档/003.jpg" alt="1"></a>
+        <a href="http://www.baidu.com"><img class="d" src="./图片、文档/004.jpg" alt="1"></a>
+        <div class="A">
+            <a class="active"href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+    </div>
+    
+</body>
+</html>

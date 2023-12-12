@@ -1,0 +1,30 @@
+{
+  "id": "4085094",
+  "name": "iconfont",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "35561387",
+      "name": "member block",
+      "font_class": "a-memberblock",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "35563476",
+      "name": "location block",
+      "font_class": "a-locationblock",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "35563479",
+      "name": "favorite line",
+      "font_class": "a-favoriteline",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    }
+  ]
+}

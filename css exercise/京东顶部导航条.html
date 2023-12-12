@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顶部不导航条</title>
+    <link rel="stylesheet" href="../css/字体/iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/字体/iconfont/下箭头/iconfont.css">
+    <link rel="stylesheet" href="../css/样式清除/reset.css">
+    <style>
+        /* 设置外部最大的块 */
+        .BOX {
+            background-color: #e3e4e5;
+            height: 30px;
+            position: relative;
+        }
+        /* 设置"下箭头"图标字体样式 */
+        .noa::after {
+            content: '\e611';
+            font-family: 'iconfont';
+            font-size: 1px;
+            color: #999;
+            padding: 0 2PX;
+        }
+
+        .iconfont {
+            color: #F10215;
+            font-size: 8PX;
+            margin-right: 4px;
+            float: left;
+        }
+        /* 设置整个内容快的字体 */
+        body {
+            font: 12px Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+
+        }
+        /* 设置带有链接标签文本的样式 */
+        a{
+           text-decoration: none; 
+           color: #999999;
+        }
+        .red{
+            color: #FF0000;
+            padding-left: 5px;
+        }
+        /* 普通文本设置样式 */
+        .noa{
+            color: #999999;
+        }
+        .address{
+            padding-left: 8px;
+            border: 1px solid transparent ;
+        }
+
+        .beijing {
+            float: left;
+            color: #999999;
+            
+        }
+        /* 给文字左右设置间隔 */
+        .t{
+            padding: 0 7px;
+        }
+        li {
+            float: left;
+        }
+
+        .box1 {
+            margin:auto;
+            width: 1190px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .box2 {
+            padding: 0 7px;
+        }
+        .box3{
+            float: right;
+        }
+        .spacer{
+            background-color:#ccc ;
+            width: 1px;
+            height: 10px;
+            margin: 11px 5px 0;
+            /* overflow: hidden; */
+
+        }
+        *:hover{
+            color: #F10215;
+        }
+
+        /* 以上部分设计的是导航条可见部分，下面设计隐藏展开部分 */
+
+        /* 设置地址标签的隐藏栏目 */
+        .city{
+            background-color: white;
+            width: 350px;
+            height: 400px;
+            border: 1px solid rgba(128, 126, 126, 0.5);
+            /* 给该标签设置绝对定位，使其可以相对于祖先元素.BOX定位 */
+            position: absolute;
+            /* 定位 */
+            top: 30px;
+            /* 设置该标签阴影 */
+            box-shadow: 0.5px 0.5px 2px rgba(128, 126, 126, 0.5);
+            /* ⭐将该块默认情况下隐藏不显示 */
+            display: none;
+        }
+        /* ⭐意思：在鼠标移入.box2时显示.city */
+        .box2:hover .city{
+            /* 状态设置为显示，与上方display: none;对应 */
+            display: block;
+        }
+        /* ⭐⭐意思：在鼠标移入.box2时显示.address的状态（设置了背景颜色、宽高、边框等）
+            写在移入.address父元素的状态下显示，可以达到当鼠标移入父元素其他标签时依旧可以显示.address
+            否则会消失 */
+        .box2:hover .address{
+            background-color: white;
+            width: 50px;
+            height: 30px;
+            border: 1px solid rgba(128, 126, 126, 0.5);
+            border-bottom:none ;
+            /* box-shadow: 0.5px 0px 2px rgba(128, 126, 126, 0.5); */
+            position: absolute;
+            /* 设置高一些的优先级，以遮挡住.city的上边框的一部分，使整个弹出框表现为一个整体 */
+            z-index: 8;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="BOX">
+        <div class="box1">
+            <ul class="box2">
+                <li class="address">
+                    <i class="iconfont">&#xe62a</i>
+                    <p class="beijing">北京</p>
+                </li>
+                <div class="city"></div>
+            </ul>
+            <ul class="box3">
+                <li class="t">
+                    <a href="#">你好，请登录</a>
+                    <a class="red" href="#">免费注册</a>
+                </li>
+                <li class="spacer"></li>
+                <li class="t" >
+                    <a href="#">我的订单</a>
+                </li>
+                <li class="spacer"></li>
+                <li class="t" >
+                    <div class="noa ">我的京东</div>
+                </li>
+                <li class="spacer"></li>
+                <li class="t" >
+                    <div class="red" class="noa">企业采购</div>
+                </li>
+                <li class="spacer"></li>
+                <li class="t" >
+                    <div class="noa">商家服务</div>
+                </li>
+                <li class="spacer"></li>
+                <li class="t" >
+                    <div class="noa">网站导航</div>
+                </li>
+                <li class="spacer"></li>
+                <li class="t" >
+                    <a href="#">手机京东</a>
+                </li>
+                <li class="spacer"></li>
+                <li class="t" >
+                    <a href="#">网站无障碍</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

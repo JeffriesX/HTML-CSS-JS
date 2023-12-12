@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .BOX{
+            width: 700px;
+            height: 450px;
+            margin: 0 auto;
+            margin: 100px auto;
+            
+        }
+        .box1{
+            width: 650px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: rgb(246, 230, 245);
+            border-left:2PX solid black ;
+            border-bottom:2PX solid black ; 
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            
+        }
+        h4{
+            width: 50px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            color: red;
+        }
+        .T{
+            width: 50PX;
+            background-color: rgb(172, 218, 253);
+            }
+        .box2{
+            width: 650px;
+            height: 50px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        } 
+        
+        span{
+            font: 25px weight;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="BOX">
+        <div class="box1">
+            <div>
+                <h4>100</h4>
+                <div class="T" style="height: 150PX;"></div>
+            </div>
+            <div>
+                <h4>100</h4>
+                <div class="T" style="height: 150PX;"></div>
+            </div>
+            <div>
+                <h4>100</h4>
+                <div class="T" style="height: 150PX;"></div>
+            </div>
+        
+
+
+
+        <div class="box2">
+            <span>A</span>
+            <span>B</span>
+            <span>C</span>
+        </div>
+    </div> -->
+    
+    
+    <script>
+
+let num1 = []
+            for(let i=1;i<=3;i++){
+                num1.push(+prompt(`请输入第1个值`)) 
+            }
+        
+        document.write(`<div class="BOX">`)
+        document.write(`<div class="box1">`)
+            for(let i=0;i<=2;i++){
+            document.write(`
+            <div>
+                <h4>${num1[i]}</h4>
+                <div class="T" style="height: ${num1[i]}px;"></div>
+            </div>`)
+        }   
+        document.write(`</div>`)
+
+
+        document.write(`<div class="box2">`)
+            let num2 = ['A','B','C']
+            for(let j=0;j<=2;j++){
+                document.write(`
+            <span>${num2[j]}</span>`)
+            }
+            
+        document.write(`</div>`)
+        document.write(`</div>`)
+    </script>
+</body>
+</html>

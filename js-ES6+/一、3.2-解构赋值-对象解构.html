@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.对象解构
+        // 将对象内的属性和方法批量赋值给一系列变量的语法
+        // 语法：const {uname,age} = {uname: '小明' , age: 18}
+        // 例子
+        const obj = {uname: '小明' , age: 18}
+        const {uname,age} = obj
+        console.log(uname,age)  // 小明 18
+
+        //注意，变量名要与对象中的属性名一至
+        
+        // 1.更名 {uname1: newName , age1}
+        const obj1 = {uname1: '小明' , age1: 18}
+        const {uname1: newName , age1} = obj1
+        console.log(newName,age1)  // 小明 18
+
+        // 2.多维对象解构
+        const obj2 = {uname2: {
+                        father:'爸爸',
+                        mother:'妈妈'
+                        }, 
+                        age2: 18
+                    }
+        const {uname2: {father,mother} , age2} = obj2            
+        console.log(father,mother,age2)   // 爸爸 妈妈 18      
+    </script>
+</body>
+</html>

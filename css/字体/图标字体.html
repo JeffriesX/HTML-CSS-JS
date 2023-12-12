@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        /* 通过类、实体使用图标字体需设置的样式  */
+        .A,
+        .B{
+            color: blueviolet;
+            font-size: 50px;
+        }
+         /* 通过伪类使用图标字体需设置的样式  */
+        p::before{
+            content: '\e62a';
+            font-family: 'iconfont';
+            font-size: 20px; 
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 通过实体使用图标字体 -->
+    <i class="A iconfont">&#xe621;</i>
+    <!-- 通过类使用图标字体 -->
+    <i class="B iconfont icon-a-favoriteline"></i>
+    <!-- 通过伪类使用图标字体 -->
+    <p>你好</p>
+    <p>你好</p>
+    <p>你好</p>
+    <p>你好</p>
+    
+</body>
+</html>

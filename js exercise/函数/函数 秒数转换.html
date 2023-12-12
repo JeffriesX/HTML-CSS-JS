@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 将输入的秒数转换为对应的时分秒
+        // （用到了返回值）
+        let b = (+prompt(`输入秒数`))
+        function getHours(time=0){
+            // 时分秒的换算公式，其中parseInt为十进制取整
+            let h = parseInt(time/3600%24)
+            let m = parseInt(time/60%60)
+            let s = parseInt(time%60)
+            // 为各位数字前面+0
+            if(h<10){
+                h = '0'+h
+            }
+             if(m<10){
+                m = '0'+m
+            }
+            if(s<10){
+                s = '0'+s
+            } 
+            // 同时返回多个值
+            return [h,m,s]
+        } 
+        let a = getHours(b)
+        document.write(`${b}秒=${a[0]}时 ${a[1]}分 ${a[2]}秒`)
+    </script>
+</body>
+</html>

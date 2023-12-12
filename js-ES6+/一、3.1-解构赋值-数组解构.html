@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 解构赋值 -->
+    <script>
+        // 1.数组结构
+        // 将数组内的元素批量赋值给一系列变量的语法
+        // 语法：const[] = arr
+        // 例子
+        const arr = [1,2,3]
+        const [a,b,c] = arr
+        console.log(a,b,c)  // 1 2 3
+        
+        // 常用于变量交换
+        let d = 1
+        let e = 2
+        ;[e,d] = [d,e]   // 注意，解构赋值若是以这样的数组开头，前面必须用分号' ；'隔开
+        console.log(d,e)  // 2 1
+
+        // 练习1
+        const pc = ['海尔','美的','格力']
+        ;[hr,md,gl] = pc
+        console.log(hr,md,gl)
+        // 练习2
+        function getValue(){
+            return [100,300]
+        }
+        ;[min,max] = getValue()
+        console.log(max,min)
+
+        const arr2 = [100,200]
+        ;;[max,min] = [Math.max(...arr2),Math.min(...arr2)]  // 结合展开运算符...
+        console.log(max,min)
+
+        console.log('....................................................................................')
+
+        // 提示：数组解构会有以下几种情况
+        // 1.变量多，单元值少
+        const [f, g, h, i] = [1,2,3]
+        console.log(f,g,h,i)  // 1 2 3 undefined
+        // 2.防止undefined出现的情况，可以给变量一个默认参数0 const [f=0, g=0, h=0, i=0] = [1,2,3]
+
+        // 3.变量少，单元值多
+        const [j, k] = [1,2,3]
+        console.log(j,k)  // 1 2
+
+        // 4.剩余参数 变量少，单元值多
+        const [l, m, ...n] = [1,2,3,4]
+        console.log(l,m,n)  // 1 2 [3,4]
+
+        // 5.按需导入赋值  单元值的忽略
+        const [o,p, , q] = [1,2,3,4]
+        console.log(o,p,q)  // 1 2 4
+
+        // 6,多维数组解构
+        const [r,s,[t,u]] = [1,2,[3,4]]
+        console.log(r,s,t,u) // 1 2 3 4 
+        // 解构之中套着解构
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 70px;
+            height: 25px;
+            background-color: bisque;
+            border-radius: 5px;
+            border: 1px solid goldenrod;
+            line-height: 25px;
+            text-align: center;
+            display: inline-block;
+            margin: 2px ;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        /* .......................................
+           .......................................
+        // 函数的声明及调用
+        // function声明，将语句放入函数
+        function set99(){
+            for(let i=1;i<=9;i++){
+                for(let j=1;j<=i;j++){
+                    document.write(`<div>${j}x${i}=${i*j}</div>`)
+                }
+                document.write(`<br>`)
+            }
+        }
+        // 调用
+        set99() */
+
+        /* ........................................
+           ........................................
+        // 函数传参
+        function getSum(num1,num2){
+            document.write(num1+num2)
+        }
+        getSum(10,20)
+        // 将调用函数括号中的值传递给function（）括号中
+         */
+
+        /* ........................................
+        //  练习1
+        function scord(arr = []){
+            let sum =0
+            for(let i=0;i<arr.length;i++){
+                sum += arr[i]
+            }
+            document.write(sum)
+        }
+        let num1 =[]
+        for(let j=1;j<=4;j++){
+        num1.push(+prompt(`输入第${j}科成绩`))
+        }
+        scord(num1)
+
+         */
+
+        /*...........................................
+          ...........................................
+         // 函数的返回值'return'
+        function getSum(x,y){
+            return(x+y)
+        }
+        let num = getSum(5,7)
+        document.write(num) */
+
+        /*........................................... 
+        // 练习2
+        // 求两数最大值
+        function getMax(x,y){
+           return x>y ? x:y
+        }
+        let max = getMax(9,100)
+        console.log(max); */
+
+        /* ...........................................
+        // 练习3
+        // 求任意数组的最大值
+        function getMax(arr=[]){
+            let max =arr[0]
+            for(let i = 1;i<arr.length;i++){
+                if(max<arr[i]){
+                    max=arr[i]
+                } 
+            }
+            return max
+        }
+        let max =getMax([6,8,3,2,9,100])
+        console.log(max); */
+
+       /*............................................ 
+        // 同时返回多个数据⭐⭐⭐
+        function getArrValue(arr=[]){
+            let max = arr[0]
+            let min = arr[0]
+            for(let i=1;i<arr.length;i++){
+                if(max<arr[i]){
+                    max=arr[i]
+                }
+                if(min>arr[i]){
+                    min=arr[i]
+                }
+            }
+            return [max,min] ⭐
+        }
+        let newArr = getArrValue([2,6,10,52,30])
+        console.log(`最大值${newArr[0]}`)
+        console.log(`最小值${newArr[1]}`) */
+
+        /* 匿名函数.....................................
+        // 1、立即执行函数
+        // 写法1
+        (function (a,b){console.log(a+b);})(1,2)
+        // 写法2
+        (function(a,b){console.log(a+b);}(1,2))
+
+        // 2、函数表达式
+        let fn = function(a,b){console.log(a+b)}
+        fn(1,2) */
+
+    </script>
+</body>
+</html>

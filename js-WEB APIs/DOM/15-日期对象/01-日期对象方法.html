@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 260px;
+            height: 30px;
+            border: 1px solid ;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 日期对象
+        const div = document.querySelector('div')
+        function getDates(){
+            // 实例化 先获取时间数据对象
+            const date = new Date()
+            // 通过日期对象方法得到需要的时间，如年、月、日等
+            let h = date.getHours()
+            let m = date.getMinutes()
+            let s = date.getSeconds()
+            h = h<10 ? '0'+h : h
+            m = m<10 ? '0'+m : m
+            s = s<10 ? '0'+s : s
+            return `今天是${date.getFullYear()}年${date.getMonth()}月${date.getDate()}日 ${h}:${m}:${s}`
+        }
+        // 将获取到的时间写到定时器外面一个，防止页面刷新时时间出现短暂空白（定时器执行是先定时再显示）
+        div.innerHTML = getDates()
+        setInterval(function(){
+            div.innerHTML = getDates()
+        } , 1000)
+        
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钟表</title>
+</head>
+<style>
+    .BOX{
+        background-color: rgb(253, 191, 204);
+        height: 500px;
+        width: 500px;
+        border: 10px solid rgb(81, 81, 81);
+        border-radius: 50%;
+        margin: auto;
+        position: relative;
+    }
+    /* 时针 */
+    .ONE{
+        width: 330px;
+        height: 330px;
+        /* 居中 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        /* 动画效果 */
+        animation: shizhen 432s linear infinite;
+
+    }
+    /* 秒针样式 */
+    .A{
+        width: 20PX;
+        height: 175PX;
+        background-color: black;
+        margin: AUTO;
+        border-radius: 10PX;
+    }
+    /* 动画关键帧 */
+    @keyframes shizhen{
+        form{transform: rotate(0deg);}
+        to{transform:rotate(360deg);}
+
+    }
+
+
+    /* 分针 */
+    .TWO{
+        width: 400px;
+        height: 400px;
+        /* 居中 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        /* 动画效果 */
+        animation: shizhen 36s linear infinite;
+
+    }
+    /* 分针样式 */
+    .B{
+        width: 10PX;
+        height: 210PX;
+        background-color: rgb(89, 88, 88);
+        margin: AUTO;
+        border-radius: 5PX;
+    }
+    .THREE{
+        width: 450px;
+        height: 450px;
+        /* 居中 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        /* 动画效果 */
+        animation: shizhen 6s linear infinite;
+
+    }
+    /* 分针样式 */
+    .C{
+        width: 5PX;
+        height: 235PX;
+        background-color: rgb(252, 4, 4);
+        margin: AUTO;
+        border-radius: 5PX;
+    }
+
+</style>
+<body>
+    <div class="BOX">
+        <div class="ONE">
+            <div class="A"></div>
+        </div>
+        <div class="TWO">
+            <div class="B"></div>
+        </div>
+        <div class="THREE">
+            <div class="C"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

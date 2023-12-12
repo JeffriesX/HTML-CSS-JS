@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 构造函数  -->
+    <script>
+        // 常规创建对象一次只能创建一个对象
+        // 而利用构造函数则可以同时创建多个类似的对象
+
+        // 常规 当想创建两对象时
+        const a = {
+            uname: '小明',
+            age: 18
+        }
+        const b = {
+            uname: '小红',
+            age: 14
+        }
+
+        // 利用构造函数 创建两个对象
+        function Pop(uname,age){
+            this.uanme = uname
+            this.age = age
+        }
+        const xioaming = new Pop('小明',18) 
+        const xiaohong = new Pop('小红',14) 
+        console.log(xiaohong)   //  Pop{uanme: '小红', age: 14}
+
+
+        // 举例1
+        function Goods(name, price ,count){
+            this.name = name
+            this.price = price
+            this.count = count
+        }
+        const mi = new Goods('小米',1999,20)
+        const huawei = new Goods('华为',3999,59)
+        const vivo = new Goods('vivo',1888,100)
+
+        console.log(mi,huawei,vivo)
+
+        // 其中的 new 为实例化
+        // ⭐实例化的过程（原理）
+        // 当 new Goods()时，即创建了一个新对象，称为实例对象，Goods中的this便开始指向这个新对象,
+        // 并且依次执行Goods中的代码到该新对象中，此时修改this，为其修改新属性(即在new Goods()括号中填入新的属性)，
+        // 则Goods的属性值被重新赋值，返回新对象(及修改后的对象)
+    </script>
+</body>
+</html>

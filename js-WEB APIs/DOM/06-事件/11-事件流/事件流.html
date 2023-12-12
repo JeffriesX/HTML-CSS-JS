@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one{
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+        }
+        .two{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(150, 36, 110);
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div class="two"></div>
+    </div>
+    <script>
+        const one = document.querySelector('.one')
+        const two = document.querySelector('.two')
+        // 1.事件捕获
+        // 事件执行从父到子
+        // 事件监听第三个参数为true
+        /* document.addEventListener('click',function(){
+            alert('big')
+        },true)
+        one.addEventListener('click',function(){
+            alert('one')
+        },true)
+        two.addEventListener('click',function(){
+            alert('two')
+        },true) */
+
+        // 2.事件冒泡
+        // 事件执行从子到父
+        // 事件监听第三个参数为false (默认值)
+        document.addEventListener('click',function(){
+            alert('big')
+        },false)
+        one.addEventListener('click',function(){
+            alert('one')
+        },false)
+        two.addEventListener('click',function(){
+            alert('two')
+        },false)
+    </script>
+</body>
+</html>

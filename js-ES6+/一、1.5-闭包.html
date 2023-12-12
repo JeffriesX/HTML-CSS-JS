@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 闭包 -->
+    <script>
+        // 应用 计算函数被调用的次数
+
+        // 不使用闭包，容易出现错误情况，如
+        /* 
+        let i = 0
+        function fn(){
+            i++
+            console.log(i)
+        }
+        fn() 
+        */
+        // 此时i对于函数fn是一个全局变量，正常i的值为0时，调用fn可的出调用次数，
+        // 但如果i不为0，调用结果将不再是真正的被调用次数
+
+        // 使用闭包
+        function fun(){
+            let i = 0
+            function fn(){
+                i++
+                console.log(i)
+            }
+            return fn
+        }
+        const count = fun()
+
+        // 此时i对于fun是函数作用域，而对于fn是'全局作用域'，此时i被更改，
+        // 由于闭包，外部函数被调用的次数即是内部函数真实被调用的次数，无论i的值如何变化
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相对定位position</title>
+    <style>
+        .box1{
+            background-color: rebeccapurple;
+            width: 200px;
+            height: 200px;
+        }
+        .box2{
+            background-color: rgb(108, 193, 156);
+            width: 200px;
+            height: 200px;
+            /* 为box2开启定位，其值设置为相对量 */
+            position: relative;
+            /* 为box2设置偏移量 */
+            top: 100px;
+            left: 200px;
+        }
+        .box3{
+            background-color: rgb(152, 105, 114);
+            width: 200px;
+            height: 200px;
+        }
+        /* 使用绝对定位absolute后，可调整定位值和外边距值（如下所示）
+           使该元素居中于设置了定位的祖先元素中 */
+        .a{
+            background-color: darkgoldenrod;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            bottom: 0; 
+            right: 0;
+            top: 0;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">
+        <div class="a"></div>
+    </div>
+    <div class="box3">3</div>
+</body>
+</html>

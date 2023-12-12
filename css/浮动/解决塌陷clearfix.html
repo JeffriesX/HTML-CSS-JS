@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完美解决高度塌陷</title>
+    <style>
+        .A{
+            background-color: aqua;
+            width: 100PX;
+            height: 100PX;
+        }
+        .a{
+            background-color: aquamarine;
+            width: 50px;
+            height: 50px;
+            /* margin-top: 50px; 当不结合clearfix使用时，由于父子元素外边距
+            重叠，父元素会随子元素外边距改变而改变，发生外边距重叠*/
+            margin-top: 50px;
+        }
+        /* 元素的开始与最后 */
+        .A::before,
+        .A:after 
+        {
+            content:'' ;/*固定搭配，内容可空着，作为边界*/
+            display: table;/*将选择器中的伪元素转换为表格，解决外边距重叠*/
+            clear: both;/*清除浮动元素的影响，解决高度塌陷*/
+        }
+    </style>
+
+</head>
+<body>
+    <div class="A ">
+        <div class="a "></div>
+    </div>
+    
+</body>
+</html>

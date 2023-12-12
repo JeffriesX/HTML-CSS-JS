@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 原型继承
+
+
+        // 这里需要注意的是，当给子类构造函数 new 父类构造函数时，
+        // 即Woman.prototype = new Person()，这个实例化过程的括号内不填内容，代表是子类调用父类中的全部内容
+        // 前提父类构造函数中的属性值是有具体的值,如this.eyes = 2，而不是之前所学的构造函数中的 this.eyes = eyes 后期需要重新赋值 
+
+        // 父类 构造函数
+        function Person() {
+            this.eyes = 2,
+            this.head = 1
+        }
+        // 子类1 构造函数
+        function Woman() { }
+        // ⭐Woman通过 原型 继承父类构造函数内容
+        Woman.prototype = new Person()
+        // 指回 子类1构造函数
+        Woman.prototype.constructor = Woman
+        // 为子类1创建一个方法
+        Woman.prototype.baby = function () {
+            console.log('bb')
+        }
+        // 将Woman的内容调用出来
+        const one = new Woman()
+        console.log(one)
+        // 子类2 构造函数
+    </script>
+</body>
+
+</html>

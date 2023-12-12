@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 获取DOM对象 -->
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+    <script>
+        // 获取匹配的第一个元素
+        let first = document.querySelector('ul li:first-child')
+        console.log(first)
+        // 获取匹配的所有元素
+        let all = document.querySelectorAll('li')
+        console.log(all)
+    </script>
+</body>
+</html>

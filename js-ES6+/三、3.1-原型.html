@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // （三）原型
+
+        // 利用原型创建数组的方法
+        // 注意其中this的使用，this指向的是实例对象
+        // 1.数组最大值
+        const arr = [1,2,3,4,5]
+        Array.prototype.max = function(){
+            return Math.max(...this)
+        }
+        console.log(arr.max())
+
+        // 2.数组最小值
+        Array.prototype.min = function(){
+            return Math.min(...this)
+        }
+        console.log(arr.min())
+
+        // 2.数组求和
+        Array.prototype.sum = function(){
+            return this.reduce((prev,current) => prev+current ,0)
+        }
+        console.log(arr.sum())
+        console.log('-------------------------------------------分割线---------------------------------------------------')
+
+        // （四）constructor 属性   用于指向该原型对象的构造函数
+        function Star(){
+            this.uname = uname 
+        }
+        // 当有多个对象方法时，可采取给原型对象采取对象形式赋值，但在这样会覆盖构造函数原型对象原来的值，
+        // constructor指向也变成了 创建方法函数，故需手动指回原构造函数   constructoer: Star    
+        Star.prototype = {
+            constructoer: Star,
+            sing:function(){console.log('唱歌')},
+            dance:function(){console.log('跳舞')}
+        }
+        // Star指向 → prototype → constructoer → Star
+        console.log(Star.prototype.constructoer === Star)   // true 
+        </script>
+</body>
+</html>

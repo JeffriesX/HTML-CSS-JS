@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.box{
+            width: 400px;
+            height: 200px;
+            background-color: rgb(187, 58, 58);
+            display: flex;
+            flex-flow: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        p{
+            color: aliceblue;
+            font-size: 50px;
+            margin: 0;
+        }
+        .btn{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        button{
+            width: 90px;
+            height: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>小花</p>
+        <div class="btn">
+            <button class="begin">开始</button>
+            <button class="end">结束</button>
+        </div> 
+    </div>
+    <script>
+        // 1.⭐设置定时器和生成随机数的全局变量，这样在关闭定时器的函数内才能用到开启定时器内生成的数据
+        let setTime = 0
+        let random = 0
+        // 2.获取dom对象
+        const box = document.querySelector('div')
+        const p = document.querySelector('p')
+        const begin = document.querySelector('.begin')
+        const end = document.querySelector('.end')
+        // 3.设置名字数组
+        let unameArr = ['小明','红红','杨颖','周杰伦','宁宁','花花']
+        // 4.开始按钮的事件监听
+        begin.addEventListener('click',function(){
+            // 开启定时器
+            setTime = setInterval(function(){
+                // 生成随机数
+                random = parseInt(Math.random()*unameArr.length)
+                // 显示数组中的随机元素
+                p.innerHTML = unameArr[random]
+            },200)
+        })
+        // 5.结束按钮的事件监听
+        end.addEventListener('click',function(){
+            // 关闭定时器
+            clearInterval(setTime)
+            // 避免抽到的名字再次抽到，所以删除掉已经抽到的名字
+            unameArr.splice(random,1)
+            console.log(unameArr);
+            // 按钮禁用 当数组中的名字被抽完时且都删除以后，数组长度为0时，禁用按钮
+            if(unameArr.length===0){
+            begin.disabled = true
+            end.disabled = true
+        } 
+        })
+        
+        
+            
+        
+    </script>
+</body>
+</html>

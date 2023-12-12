@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 1.定时器开启 setInterval*/
+        // 方法一
+        setInterval(function(){
+            console.log(`执行一`)
+        },1000)
+        // 方法二
+        // 先创建函数，再定时该函数
+        function fn(){
+            console.log('执行二')
+        }
+        setInterval(fn,1000)
+
+        /* 2.定时器关闭 clearInterval*/
+        let n = setInterval(function(){
+            console.log(`执行一`)
+        },1000)
+        clearInterval(n)
+
+        
+    </script>
+</body>
+</html>

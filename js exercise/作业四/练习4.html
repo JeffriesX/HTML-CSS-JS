@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function inputNum([a,b,c]){
+            let result = a-b-c
+            return result
+        } 
+        let num = ['银行卡存款金额：','食宿消费：','生活费：']
+        let money =[]
+        for(let i=0;i<=2;i++){
+            money.push(+prompt(`输入${num[i]}，单位/元`))
+        }
+        let input = inputNum(money)
+        alert(`您的银行卡剩余余额为${input}元`)
+    </script>
+</body>
+</html>

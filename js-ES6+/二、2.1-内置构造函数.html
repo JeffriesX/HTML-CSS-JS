@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <span></span>
+        <span></span>
+    </div>
+    <script>
+        // ⭐1.Object 对象
+        // 是静态方法，只有构造函数可以调用
+        const o = { uname: '小明', age: 18 }
+        // 1.获取对象中的属性 Object.keys(o)
+        console.log(Object.keys(o))
+        // 2.获取对象中的属性值 Object.values(o)
+        console.log(Object.values(o))
+        // 3.(了解)拷贝对象 assign
+        const oo = {}
+        Object.assign(oo, o)
+        console.log(oo)
+        // 常用于对象添加属性
+        Object.assign(o, { gender: '女' })
+        console.log(o)
+
+        console.log('----------------------------分割线-------------------------------------------')
+        // ⭐2.Array 数组
+        // （1）累计器 reduce 方法..................................................................
+        // 语法：
+        // arr.reduce(function(上一次值,当前值){},初始值)
+        // 有初始值就将初始值作为第一次累加的上一次值，然后进行累加，没有就只累加数组
+        // 例1
+        const arr = [1, 2, 3]
+        const total = arr.reduce(function (prev, current) {
+            return prev + current
+        }, 10)
+        console.log(total)  // 16
+
+        // 例2 对象数组中的薪资累加
+        const obj = [{
+            uname: '小明',
+            salary: 10000
+        }, {
+            uname: '小兰',
+            salary: 10000
+        }]
+        const totals = obj.reduce(function (prev, current) {
+            return prev + current.salary   // 初始值一定设置为0
+        }, 0)  // 一定为current.salary
+        console.log(totals)   // 20000
+        // 注意：像这样的对象数组，初始值一定设置为0，因为第一个值不是薪水，
+        // 是uname,另外返回值中的当前值一定为current.salary,要得到的不仅是第一个对象，而且还是第一个对象中的薪资属性
+
+        // （2）查找 find 方法..................................................................
+        // 查找对象数组中对应的'小明'数组
+        const found = obj.find(item => item.uname === '小明')
+        console.log(found);
+        // 将查找到的对象的属性值转换为字符串
+        console.log(Object.values(found).join('/'))
+
+        console.log('----------------------------分割线-------------------------------------------')
+        // ⭐3.String 字符串
+        // (1). split 把字符串转换为数组   和join使用方法相反
+        // 语法： str.split()
+        const str = '2023-8-1'
+        console.log(str.split('-')) // 括号中的 - 表示该数组以字符串中的 - 分割字符串，并转变为数组中的元素 
+        // (2). substring 字符串截取..................................................................
+        // 语法：str.substring(开始的索引号[,结束的索引号])
+        // 结束索引号省略的情况下，表示截取从开始索引到最后
+        const str1 = '红色的苹果'
+        console.log(str1.substring(3, 5))
+
+        // (3). includes 判断某字符是否包含在一个字符串中并 返回一个布尔值..............................
+        // 语法: str.substring('某字符')
+        console.log(str1.includes('苹果'))
+
+        console.log('----------------------------分割线-------------------------------------------')
+        // 练习,将字符串拆分并遍历到指定标签内
+        const gift = '50g茶叶,清洗求'
+        const newArr = gift.split(',').map(ele => {
+            return `<span>[赠品]${ele}</span>`
+        })
+        document.querySelector('div').innerHTML = newArr.join('')
+    </script>
+</body>
+
+</html>

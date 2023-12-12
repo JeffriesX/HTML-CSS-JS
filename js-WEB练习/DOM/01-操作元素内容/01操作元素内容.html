@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="one">a</div>
+        <div class="two">b</div>
+        <div class="thre">c</div>
+    </div>
+    <script>
+        let personArr = ['小明','小红','Petter','壮壮']
+        let random = Math.floor(Math.random()*personArr.length)
+        let one = document.querySelector('.one')
+        // 操作元素，使其等于等号后面的值
+        one.innerHTML = personArr[random]
+        personArr.splice(random,1)
+        console.log(personArr)
+
+    </script>
+</body>
+</html>  

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 100%;
+        height: 200px;
+        background-color: rgb(239, 239, 239);
+        border-radius: 30px 0;
+        box-shadow: 10px 10px 10px rgb(215, 214, 214);
+        overflow: hidden;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    span{
+        display: block;
+    }
+    .top{
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        padding: 20px;
+        color: rgb(82, 82, 82);
+    }
+    .bot{
+        height: 100px; 
+        box-sizing: border-box;
+        padding: 20px;
+        color: rgb(82, 82, 82);
+        display: flex;
+        align-items: self-end;
+        
+    }
+
+</style>
+<body>
+    <!-- <div class="box">
+        <span class="top">1</span>
+        <span class="bot">2</span>
+        <span class="bot">3</span>
+        <span class="bot">4</span>
+    </div> -->
+    <script>
+        let obj = {
+            goods : '小米(MI)',
+            name : '小米小米10 青春版',
+            num : '10028356',
+            weight : '0.55kg' ,
+            address : '中国大陆'
+
+        }
+        // 改
+        obj.name = '小米10 Plus'
+        // 增
+        obj.color = '粉色'
+        // 查（两种）
+         console.log(obj.color)  //写法1
+        //写法2 console.log(obj['color']
+
+        document.write(`<div class="box">`)
+            document.write(`<span class="top">品牌：${obj.goods}</span>`)
+            document.write(`<span class="bot">商品名称：${obj.name}</span>`)
+            document.write(`<span class="bot">商品编码：${obj.num}</span>`)
+            document.write(`<span class="bot">商品毛重：${obj.weight}</span>`)
+            document.write(`<span class="bot">颜色：${obj.color}</span>`)
+            document.write(`<span class="bot">产地：${obj.adress}</span>`)
+                
+        document.write(`</div>`)
+    </script>
+</body>
+</html>

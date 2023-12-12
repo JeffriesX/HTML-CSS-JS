@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        function getRandom(flag=true){
+            if(flag){
+                let r = Math.floor(Math.random()*256)
+                let g = Math.floor(Math.random()*256)
+                let b = Math.floor(Math.random()*256)
+                return  `rgb(${r},${g},${b})`
+            }
+            else{
+           
+                let str = '#'
+                let arr = ['1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+                for(let i =1 ; i<7 ;i++){
+                    let num = Math.floor(Math.random()*arr.length)
+                    str += arr[num]
+                    
+                } 
+            return str
+            }
+        }
+        let a = getRandom(false)
+        document.write(`<div style="background-color: ${a};"></div>`)
+        
+    
+    </script>
+</body>
+</html>

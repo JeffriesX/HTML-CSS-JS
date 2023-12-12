@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.throw抛异常
+
+        // 注意：1.throw抛出异常信息，程序也会终止  2.throw后跟异常提示信息 3.可配合Error使用，提示更加准确
+        function fn(x,y) {
+            if(!x || !y){
+                // throw '参数不能为空'
+                throw new Error('参数不能为空昂')
+            }
+            return x+y
+        }
+        fn()
+
+        // 2.try/catch捕获错误信息
+        // 3.debugger
+
+        // 2,3使用到的时候查询使用方法
+    </script>
+</body>
+</html>

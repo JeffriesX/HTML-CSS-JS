@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 函数参数 -->
+    <script>
+        // 1.动态参数 arguments
+        // （1）.只存在于函数中   （2）.是一个伪数组 3.动态获取函数实参 
+        let sum1 = 0
+        function getSum1(){
+            for(let i = 0 ; i<arguments.length ; i++){
+                sum1 +=arguments[i]
+            }
+            console.log(sum1)
+        }
+        getSum1(1,2,3,4,6)
+        // 以前需要创立空数组，将数组遍历后求和，现在可以直接使用arguments,实参直接传入其中，形成伪数组
+
+
+        // 2.剩余参数  ...
+        let sum2 = 0
+        function getSum2(...arr){
+            for(let i = 0 ; i<arr.length ; i++){
+                sum2 +=arr[i]
+            }
+            console.log(sum2)
+        }
+        getSum2(1,2,3)
+        // 用法与arguments基本一致，但具有更多优势
+        // 是一个 真数组
+    </script>
+</body>
+</html>

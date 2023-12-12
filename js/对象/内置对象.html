@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 内置对象
+        // ........................................................
+        // 生成一定范围内的随机数
+        // 0-10
+        console.log(Math.floor(Math.random()*11))
+        // 生成4-9之间的随机数
+        console.log(Math.floor(Math.random()*(9-4+1))+4)
+        
+        // ........................................................
+        // 随机点名
+        let arr = ['小明','小红','小黄','小兰','花花']
+        let random = Math.floor(Math.random()*arr.length)
+        console.log(arr[random]) */
+        
+        // ........................................................
+        /* // 随机点名(点到的不会再被点到)
+            let arr = ['小明','小红','小黄','小兰','花花','贝贝','龙龙']
+            let random = Math.floor(Math.random()*arr.length)
+            document.write(arr[random])
+            arr.splice(random , 1)
+            console.log(arr) */
+
+
+        // ........................................................
+        // 练习1 猜数字，输入数字，比较随机生成的数字大小
+        // 方法⭐：采用while循环和if多分支语句
+        
+        /* function getRandom(A,B){
+            return Math.floor(Math.random()*(B-A+1))+A
+        }
+        let random = getRandom(0,10)
+        console.log(random);
+        while(true){  // ⭐
+            let inputNum = +prompt(`请输入你猜的数字`)
+            
+            if(inputNum>random && inputNum<=10){
+                alert(`猜大了,继续猜`)
+            }
+            else if(inputNum<random && inputNum>0){
+             alert(`猜小了,继续猜`)
+            }
+            else if(inputNum>10 || inputNum<0){
+                alert(`请输入范围内的数字`)
+            }
+            else{
+                alert(`猜对了`)
+                break
+            }
+        } */
+
+        // ........................................................
+        // 练习2 限定次数猜数字
+        // 方法 ⭐：采用for循环和if多分支语句
+        function getRandom(A,B){
+            return Math.floor(Math.random()*(B-A+1))+A
+        }
+        let random = getRandom(0,10)
+        console.log(random)
+        let flag = true  // ⭐
+        for(let i = 1;i<=3;i++){  // ⭐
+            let inputNum = +prompt(`请输入你猜的数字`)
+            if(inputNum>random && inputNum<=10){
+                alert(`猜大了,继续猜`)
+            }
+            else if(inputNum<random && inputNum>0){
+             alert(`猜小了,继续猜`)
+            }
+            else if(inputNum>10 || inputNum<0){
+                alert(`请输入范围内的数字`)
+            }
+            else{ 
+                alert(`猜对了`)
+                flag = false   // ⭐用于终止猜对以后继续执行下面提示(失败)的if语句，当flag=fales时，下方的提示（失败）的if语句不会执行
+                break
+            }   
+        }
+        if(flag){   // ⭐ 写到for循环外
+                alert(`失败，猜错次数太多啦`)
+         }
+
+            
+          
+    </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郭总专用</title>
+    <style>
+        html{
+            background-image: url(./微信图片_20231018221747.jpg);
+            background-position: left 170px;
+            background-size: 800px;
+        }
+        .box {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .out {
+            width: 95%;
+            height: 520px;
+            border: 6px solid #000010;
+            padding: 20px;
+            margin: 0 auto;
+            word-break: break-all;
+            display: none;
+            border-radius: 30px;
+            overflow-y: scroll;
+            /* background-image: url(./微信图片_20231018221747.jpg); */
+            background-image: linear-gradient(180deg, #fc76b3, #facd68);
+        }
+
+        .info {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .enter {
+            width: 95%;
+            height: 150px;
+            border: 6px solid #000010;
+            outline: none;
+            font-size: 30px;
+            text-align: center;
+            border-radius: 30px;
+            caret-color: #4c7b0c;
+            font-weight: bold;
+            margin-top: 120px;
+            background-image: linear-gradient(180deg, #fc76b3, #facd68);
+        }
+
+        .enter::-webkit-input-placeholder {
+            color: white;
+        }
+
+        .red {
+            width: 200px;
+            height: 100px;
+            background-color: #fc76b3;
+            border-radius: 20px;
+            border: 6px solid #000010;
+            margin-left: 2px;
+            /* box-shadow:  -5px 5px 5px black; */
+            /* z-index: 9; */
+        }
+
+        .blue {
+            width: 200px;
+            height: 100px;
+            background-color: #facd68;
+            border-radius: 20px;
+            border: 6px solid #000010;
+            /* box-shadow:  -5px 5px 5px black; */
+            /* z-index: 10; */
+        }
+
+        .btn {
+            display: flex;
+            margin: 20px auto;
+        }
+
+        .active {
+            box-shadow: -6px 6px 8px rgb(27, 27, 27);
+            transition: all .2s;
+        }
+
+        .active2 {
+            box-shadow: -6px 6px 8px #ff700f;
+            transition: all .2s;
+        }
+
+        .theme{
+            display: flex;
+        }
+
+        .change {
+            width: 70px;
+            height: 70px;
+            border: none;
+            border-radius: 15px;
+            margin-top: 230px;
+            margin-left: -2px;
+            background-image: linear-gradient(180deg, #a0f1ea, #ead6ee);
+        }
+        .change2 {
+            width: 70px;
+            height: 70px;
+            border: none;
+            border-radius: 15px;
+            margin-top: 230px;
+            margin-left: -2px;
+            background-image: linear-gradient(180deg, #7dc387, #dbe9ea);
+        }
+        .change3 {
+            width: 70px;
+            height: 70px;
+            border: none;
+            border-radius: 15px;
+            margin-top: 230px;
+            margin-left: -2px;
+            background-image: linear-gradient(180deg, #0c7bb3, #f2bae8);
+        }
+        .change4 {
+            width: 70px;
+            height: 70px;
+            border: none;
+            border-radius: 15px;
+            margin-top: 230px;
+            margin-left: -2px;
+            background-image: linear-gradient(180deg, #f4d03f, #16a085);
+        }
+        .change5 {
+            width: 70px;
+            height: 70px;
+            border: none;
+            border-radius: 15px;
+            margin-top: 230px;
+            margin-left: -2px;
+            background-image: linear-gradient(180deg, #faaca8, #ddd6f3);
+        }
+        .change6 {
+            width: 70px;
+            height: 70px;
+            border: none;
+            border-radius: 15px;
+            margin-top: 230px;
+            margin-left: -2px;
+            background-image: linear-gradient(180deg, #ff0844, #ffb199);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form class="info" autocomplete="off">
+            <input placeholder="请输入内容" class="enter" type="text" autofocus>
+            <!-- <input class="out" type="text"> -->
+        </form>
+        <div class="btn">
+            <button class="blue"></button>
+            <button class="red"></button>
+        </div>
+        <div class="out"></div>
+        <div class="theme">
+            <button class="change4"></button>
+            <button class="change3"></button>
+            <button class="change2"></button>
+            <button class="change"></button>
+            <button class="change5"></button>
+            <button class="change6"></button>
+        </div>
+        <!-- <textarea class="out" wrap="hard"></textarea> -->
+    </div>
+    <script>
+        const out = document.querySelector('.out')
+        const enter = document.querySelector('.enter')
+        const info = document.querySelector('form')
+        const red = document.querySelector('.red')
+        const blue = document.querySelector('.blue')
+        const change = document.querySelector('.change')
+        const change2 = document.querySelector('.change2')
+        const change3 = document.querySelector('.change3')
+        const change4 = document.querySelector('.change4')
+        const change5 = document.querySelector('.change5')
+        const change6 = document.querySelector('.change6')
+
+        info.addEventListener('input', function (e) {
+            e.preventDefault()
+            const result = enter.value.split('http')
+            console.log(result)
+            const arr = []
+            const n = ''
+            for (let i = 1; i < result.length; i++) {
+                const div = document.createElement('div')
+                div.innerHTML = `<div>http${result[i]}</div><p>`
+                out.appendChild(div)
+            }
+        })
+        red.addEventListener('click', function (e) {
+            e.preventDefault()
+            enter.style.display = 'none'
+            out.style.display = 'block'
+        })
+        blue.addEventListener('click', function (e) {
+            e.preventDefault()
+            enter.style.display = 'block'
+            enter.value = ''
+            out.innerHTML = ''
+            out.style.display = 'none'
+        })
+        red.addEventListener('mouseenter', function (e) {
+            e.preventDefault()
+            red.classList.add('active')
+        })
+        red.addEventListener('mouseleave', function (e) {
+            e.preventDefault()
+            red.classList.remove('active')
+        })
+        blue.addEventListener('mouseenter', function (e) {
+            e.preventDefault()
+            blue.classList.add('active2')
+        })
+        blue.addEventListener('mouseleave', function (e) {
+            e.preventDefault()
+            blue.classList.remove('active2')
+        })
+        enter.addEventListener('mouseenter', function () {
+            enter.classList.add('active2')
+        })
+        enter.addEventListener('mouseleave', function () {
+            enter.classList.remove('active2')
+        })
+
+        change.addEventListener('click', function () {
+            enter.style.backgroundImage = 'linear-gradient(180deg,#a0f1ea,#ead6ee)'
+            out.style.backgroundImage = 'linear-gradient(180deg,#a0f1ea,#ead6ee)'
+            red.style.backgroundColor = '#ead6ee'
+            blue.style.backgroundColor = '#a0f1ea'
+        })
+        change2.addEventListener('click', function () {
+            enter.style.backgroundImage = 'linear-gradient(180deg,#7dc387,#dbe9ea)'
+            out.style.backgroundImage = 'linear-gradient(180deg,#7dc387,#dbe9ea)'
+            red.style.backgroundColor = '#dbe9ea'
+            blue.style.backgroundColor = '#7dc387'
+        })
+        change3.addEventListener('click', function () {
+            enter.style.backgroundImage = 'linear-gradient(180deg,#0c7bb3,#f2bae8)'
+            out.style.backgroundImage = 'linear-gradient(180deg,#0c7bb3,#f2bae8)'
+            red.style.backgroundColor = '#f2bae8'
+            blue.style.backgroundColor = '#0c7bb3'
+        })
+        change4.addEventListener('click', function () {
+            enter.style.backgroundImage = 'linear-gradient(180deg,#f4d03f,#16a085)'
+            out.style.backgroundImage = 'linear-gradient(180deg,#f4d03f,#16a085)'
+            red.style.backgroundColor = '#16a085'
+            blue.style.backgroundColor = '#f4d03f'
+        })
+        change5.addEventListener('click', function () {
+            enter.style.backgroundImage = 'linear-gradient(180deg,#faaca8,#ddd6f3)'
+            out.style.backgroundImage = 'linear-gradient(180deg,#faaca8,#ddd6f3)'
+            red.style.backgroundColor = '#ddd6f3'
+            blue.style.backgroundColor = '#faaca8'
+        })
+        change6.addEventListener('click', function () {
+            enter.style.backgroundImage = 'linear-gradient(180deg,#ff0844,#ffb199)'
+            out.style.backgroundImage = 'linear-gradient(180deg,#ff0844,#ffb199)'
+            red.style.backgroundColor = '#ffb199'
+            blue.style.backgroundColor = '#ff0844'
+        })
+
+        // info.addEventListener('input', function (e) {
+        //     e.preventDefault()
+        //     const result = enter.value.split('http')
+        //     console.log(result)
+        //     for (let i = 1; i < result.length; i++) {
+        //         out.innerHTML = `http${result[i]}<p>`
+        //     }
+        // })
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .active1{
+            color: red;
+        }
+        .active2{
+            height: 400px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">123456789123456123456</div>
+    <script>
+        const box = document.querySelector('.box')
+        // 通过classList追加和删除类名
+        // 此方法比className更加灵活
+
+        // 1、追加一个类 add
+        box.classList.add('active1')
+        // 2、删除一个类 remove
+        box.classList.remove('active1')
+        // 3、替换一个类 toggle
+        /* toggle 对原类名进行修改替换，相同样式保留，不同样式替换 */
+        box.classList.toggle('active2')
+    </script>
+     
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .BOX{
+        background-color: rgb(253, 237, 250);
+        width: 700px;
+        height: 800px;
+        border: 2px solid rgb(106, 94, 94);
+        position: relative;
+    }
+    .box1{
+        background-color: rgb(252, 163, 236);
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        transition: all 1s 0.5s;
+    
+    }
+    .box2{
+        background-color: rgb(163, 200, 252);
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        
+        transition: all 1s 1s;
+    }
+    .box3{
+        background-color: rgb(163, 252, 231);
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        transition: all 1s 1.5s;
+    }
+    .box4{
+        background-color: rgb(237, 252, 163);
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        transition: all 1s 2s;
+    }
+    /* .BOX:hover .box4{
+        margin-left: 0px;
+    }
+    .BOX:hover .box3{
+        margin-left: 20px;
+    }
+    .BOX:hover .box2{
+        margin-left: 40px;
+    }
+    .BOX:hover .box1{
+        margin-left: 60px;
+    } */
+    .BOX:hover .box4{
+        z-index: 1;
+    }
+    .BOX:hover .box3{
+        z-index: 2;
+    }
+    .BOX:hover .box2{
+        z-index: 3;
+    }
+    .BOX:hover .box1{
+        z-index: 4;
+    }
+
+    
+</style>
+<body>
+    <div class="BOX">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

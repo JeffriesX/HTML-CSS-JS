@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            width: 300px;
+            height: 600px;
+            background-color: #f58787;
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: #5790e0;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <P>PPP</P>
+    </ul>
+    <script>
+        // 事件委托
+        const ul = document.querySelector('ul')
+        ul.addEventListener('click',function(e){
+            
+            // console.dir(e.target)  其中的dir表示打印对象，log是打印对象内容
+            // 上面的代码结果中，可以找到对象名称tagName = 'LI',当我们要点击相同种类对象时，用此方法,此时只有li标签生效，p标签不生效
+            if(e.target.tagName === 'LI'){
+                e.target.style.backgroundColor = 'red'
+            }
+        })
+    </script>
+</body>
+</html>

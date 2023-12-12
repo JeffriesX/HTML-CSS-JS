@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function exChange(time){
+            let h = parseInt(time/3600%24) 
+            let m = parseInt(time/60%60) 
+            let s = parseInt(time%60) 
+            h<10 ? h='0'+h : h
+            m<10 ? m='0'+m : m
+            s<10 ? s='0'+s : s
+            return [h,m,s]
+        }
+        let input = +prompt(`输入时间`)
+        let time = exChange(input)
+        document.write(`${time[0]}时 ${time[1]}分 ${time[2]}秒`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../swiper插件/swiper-bundle.min.css">
+    <style>
+        .box{
+            width: 900px;
+            height: 500px;
+            overflow: hidden;   /* ⭐溢出隐藏，将整个轮播图放在自己设定的box中 */
+            margin: 100px auto;
+            position: relative;  /* ⭐开启定位，不然按键和小圆点不显示 */
+        }
+        html, body {
+        position: relative;
+        height: 100%;
+        }
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#000;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            
+            
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-pagination-bullet{ /* 更改背景小圆点的样式 */
+            background-color: rgb(0, 0, 0);
+            width: 8px;
+            height: 8px;
+            opacity: .3;
+        }
+        .swiper-pagination-bullet-active{ /* 更改高亮小圆点的样式 */
+            background-color: red;
+            width: 10px;
+            height: 10px;
+            position: relative;
+            top: 1px;
+            opacity: 1;
+        }
+        /* ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ */
+        .swiper-pagination{ /* 更改圆点的位置 */
+            box-sizing: border-box;
+            text-align: center;
+            /* padding-left: 200px;圆点不放中间时用padding,并设置border-box */
+        }
+        .swiper-button-next{ /* 更改前进按钮的位置和背景样式 */
+            top: 50%;
+            right: 10px;
+            left: auto;
+            background-color: rgba(1, 1, 1, .1);
+            border-radius: 5px;
+        }
+        .swiper-button-prev{/* 更改后退按钮的位置和背景样式 */
+            top: 50%;
+            right: auto;
+            left: 10px;
+            background-color: rgba(1, 1, 1, .1);
+            border-radius: 5px;
+        }
+        .swiper-button-next:after, .swiper-button-prev:after{/* 更改按钮箭头的样式 */
+            font-size: 30px;
+            color: red;
+            
+        }
+        .write{
+            position: absolute;
+            top: 410px;
+            left: 600px;
+            z-index: 13;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-slide">Slide 10</div>
+            </div>
+            <p class="write">对人类来说会不会太超前了？</p>
+            <!-- Add Pagination 添加分页（小圆点）-->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows 添加箭头-->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    
+    </div>
+    <script src="../swiper插件/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el:'.swiper-pagination',
+                clickable : true},//点击指示点分页器（小圆点）会控制Swiper切换
+                loop: true ,//无限循环，轮播到最后一张后循环到第一张继续轮播
+            autoplay: {
+                delay: 1000,//1秒切换一次
+                disableOnInteraction: false, // 操作swiper之后自动轮播会继续
+                pauseOnMouseEnter:true,//鼠标移入暂停轮播，移出继续轮播，配合上面disableOninteraction:false使用，才有效
+            },
+            navigation: { //使用前进后退按钮来控制Swiper切换。
+                nextEl: '.swiper-button-next',//设置前进按钮的css或html的选择器
+                prevEl: '.swiper-button-prev',//设置后退按钮的css或html的选择器
+            },
+            spaceBetween: 30,//设定slide之间的间隔，单位/px
+            centeredSlides: true,//在不是一个盒子同时显示多个slide时，此代码可不写
+            
+    });
+    </script>
+</body>
+</html>
